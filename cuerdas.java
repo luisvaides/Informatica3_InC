@@ -9,30 +9,30 @@ public class cuerdas {
 
         
         System.out.println("Prefijos:");
-        generarYMostrarPrefijos(s);
+        Prefijos(s);
         System.out.println("\nSufijos:");
-        generarYMostrarSufijos(s);
+        Sufijos(s);
         System.out.println("\nSubcadenas:");
-        generarYMostrarSubcadenas(s);
+        Subcadenas(s);
         System.out.println("\nSubsecuencias:");
-        generarYMostrarSubsecuencias(s, "");
+        Subsecuencias(s, "");
     }
 
-    static void generarYMostrarPrefijos(String s) {
+    static void Prefijos(String s) {
         System.out.println("λ");
         for(int i = 1; i <= s.length(); i++) {
             System.out.println(s.substring(0, i));
         }
     }
 
-    static void generarYMostrarSufijos(String s) {
+    static void Sufijos(String s) {
         System.out.println("λ");
         for(int i = 0; i < s.length(); i++) {
             System.out.println(s.substring(i));
         }
     }
 
-    static void generarYMostrarSubcadenas(String s) {
+    static void Subcadenas(String s) {
         System.out.println("λ");
         for (int i = 0; i < s.length(); i++) {
             for (int j = i+1; j <= s.length(); j++) {
@@ -41,14 +41,14 @@ public class cuerdas {
         }
     }
 
-    static void generarYMostrarSubsecuencias(String s, String ans) {
+    static void Subsecuencias(String s, String ans) {
         if (s.length() == 0) {
             System.out.println(ans);
             return;
         }
         
-        generarYMostrarSubsecuencias(s.substring(1), ans + s.charAt(0));
-        generarYMostrarSubsecuencias(s.substring(1), ans);
+        Subsecuencias(s.substring(1), ans + s.charAt(0));
+        Subsecuencias(s.substring(1), ans);
     }
 }
 
